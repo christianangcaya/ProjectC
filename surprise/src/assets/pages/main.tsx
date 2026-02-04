@@ -93,35 +93,41 @@ const AnniversaryTracker = () => {
     const day = now.getDate();
     const month = now.getMonth() + 1;
     const weekday = now.getDay();
-    if (month === 2 && day === 4) {
-      setMessageEmoji("💕");
-      return "Happy Valentine's Day, Love!";
+
+    // Valentine's Day (Feb 14)
+    if (month === 2 && day === 14) {
+      return { message: "Happy Valentine's Day, Love!", emoji: "💕" };
     }
+
+    // Birthday (Aug 30)
     if (month === 8 && day === 30) {
-      setMessageEmoji("🎂");
-      return "Happy Birthday, Love!";
+      return { message: "Happy Birthday, Love!", emoji: "🎂" };
     }
 
+    // Anniversary (June 12)
     if (day === 12 && month === 6) {
-      setMessageEmoji("🎉");
-      return "Happy Anniversary!, Love!";
-    }
-    if (day === 12) {
-      setMessageEmoji("🌹");
-      return "Happy Monthsary!, Love!";
-    }
-    if (weekday === 3) {
-      setMessageEmoji("❤️");
-      return "Happy Weeksary!, Love!";
+      return { message: "Happy Anniversary!, Love!", emoji: "🎉" };
     }
 
-    return "";
+    // Monthsary (12th of any month)
+    if (day === 12) {
+      return { message: "Happy Monthsary!, Love!", emoji: "🌹" };
+    }
+
+    // Weeksary (Friday)
+    if (weekday === 5) {
+      return { message: "Happy Weeksary!, Love!", emoji: "❤️" };
+    }
+
+    return { message: "", emoji: "" };
   }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeElapsed(calculateTimeElapsed());
-      setSpecialMessage(checkSpecialOccasion());
+      const { message, emoji } = checkSpecialOccasion();
+      setMessageEmoji(emoji);
+      setSpecialMessage(message);
     }, 1000);
     return () => clearInterval(timer);
   }, [calculateTimeElapsed, checkSpecialOccasion]);
