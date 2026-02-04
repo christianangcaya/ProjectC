@@ -93,7 +93,7 @@ const AnniversaryTracker = () => {
     const day = now.getDate();
     const month = now.getMonth() + 1;
     const weekday = now.getDay();
-    if (month === 2 && day === 14) {
+    if (month === 2 && day === 4) {
       setMessageEmoji("💕");
       return "Happy Valentine's Day, Love!";
     }
