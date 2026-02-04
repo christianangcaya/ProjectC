@@ -95,7 +95,7 @@ const AnniversaryTracker = () => {
     const weekday = now.getDay();
 
     // Valentine's Day (Feb 14)
-    if (month === 2 && day === 14) {
+    if (month === 2 && day === 4) {
       return { message: "Happy Valentine's Day, Love!", emoji: "💕" };
     }
 
