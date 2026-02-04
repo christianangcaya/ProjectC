@@ -110,7 +110,7 @@ const AnniversaryTracker = () => {
       setMessageEmoji("🌹");
       return "Happy Monthsary!, Love!";
     }
-    if (weekday ===3) {
+    if (weekday === 3) {
       setMessageEmoji("❤️");
       return "Happy Weeksary!, Love!";
     }
