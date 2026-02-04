@@ -115,7 +115,7 @@ const AnniversaryTracker = () => {
     }
 
     // Weeksary (Friday)
-    if (weekday === 3) {
+    if (weekday === 5) {
       return { message: "Happy Weeksary!, Love!", emoji: "❤️" };
     }
 
